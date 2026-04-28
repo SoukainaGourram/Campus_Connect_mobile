@@ -1,3 +1,23 @@
 <resources>
-    <string name="app_name">CampusConnect</string>
+    <string name="app_name">Campus Connect</string>
+    <string name="role_student">Étudiant</string>
+    <string name="role_admin">Administrateur</string>
+    <string name="filiere_it">Informatique</string>
+    <string name="filiere_business">Business</string>
+    <string name="filiere_engineering">Ingénierie</string>
+
+    <!-- Menu and Fragments -->
+    <string name="nav_home">Accueil</string>
+    <string name="nav_schedule">Emploi</string>
+    <string name="nav_chat">Chat</string>
+    <string name="nav_profile">Profil</string>
+    <string name="schedule_title">Emploi du temps</string>
+
+    <!-- Auth -->
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Mot de passe</string>
+    <string name="btn_login">Se connecter</string>
+    <string name="btn_register">S\'inscrire</string>
+    <string name="link_no_account">Pas de compte ?</string>
+    <string name="hint_name">Nom</string>
 </resources>
