@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+╔══════════════════════════════════════════════════════════════╗
+║  dialog_add_announcement.xml                                 ║
+║                                                              ║
+║  Le formulaire qui apparaît quand admin/prof clique sur "+"  ║
+║  C'est une boîte de dialogue (AlertDialog) avec :           ║
+║  - Champ titre                                               ║
+║  - Champ contenu                                             ║
+║  - Spinner catégorie                                         ║
+║  - Switch "Urgent"                                           ║
+╚══════════════════════════════════════════════════════════════╝
+-->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nouvelle annonce"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#212121"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Champ titre -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Titre de l'annonce"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Champ contenu -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contenu de l'annonce"
+        android:layout_marginTop="12dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minLines="3"
+            android:gravity="top"
+            android:inputType="textMultiLine" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Spinner catégorie -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Catégorie"
+        android:textColor="#616161"
+        android:textSize="13sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="6dp" />
+
+    <Spinner
+        android:id="@+id/spCategory"
+        android:layout_width="match_parent"
+        android:layout_height="48dp" />
+
+    <!-- Switch urgent -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Marquer comme urgent"
+            android:textColor="#212121"
+            android:textSize="14sp" />
+
+        <Switch
+            android:id="@+id/switchUrgent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>

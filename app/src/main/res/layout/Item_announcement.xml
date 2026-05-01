@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+╔══════════════════════════════════════════════════════════════╗
+║  item_announcement.xml                                       ║
+║                                                              ║
+║  C'est le design d'UNE carte d'annonce dans la liste.        ║
+║  Le RecyclerView va répéter ce fichier pour chaque annonce.  ║
+║                                                              ║
+║  Structure visuelle :                                        ║
+║  ┌─────────────────────────────────┐                         ║
+║  │ 🔴 [URGENT]  Général            │ ← catégorie + badge     ║
+║  │ Titre de l'annonce              │ ← titre en gras         ║
+║  │ Contenu de l'annonce...         │ ← texte (2 lignes max)  ║
+║  │ Par Admin · il y a 2h           │ ← auteur + date         ║
+║  └─────────────────────────────────┘                         ║
+╚══════════════════════════════════════════════════════════════╝
+-->
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="#FFFFFF">
+
+    <!--
+        LinearLayout vertical : empile les éléments de haut en bas
+        padding="16dp" : espace intérieur
+    -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- ── LIGNE 1 : Badge URGENT + Catégorie ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <!--
+                Badge URGENT : petit rectangle rouge
+                visibility="gone" = caché par défaut
+                Le Java l'affiche si isUrgent == true
+            -->
+            <TextView
+                android:id="@+id/tvUrgent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔴 URGENT"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:background="#E53935"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:layout_marginEnd="8dp"
+                android:visibility="gone" />
+
+            <!--
+                Catégorie : "Examens", "Événements", "Général"...
+                layout_weight="1" = prend tout l'espace restant
+            -->
+            <TextView
+                android:id="@+id/tvCategory"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#1565C0"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:text="Général" />
+
+        </LinearLayout>
+
+        <!-- ── LIGNE 2 : Titre de l'annonce ── -->
+        <!--
+            textStyle="bold" : titre en gras
+            textSize="16sp" : plus grand que le reste
+            maxLines="2" : max 2 lignes pour le titre
+        -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#212121"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:layout_marginBottom="6dp"
+            android:text="Titre de l'annonce" />
+
+        <!-- ── LIGNE 3 : Contenu / description ── -->
+        <!--
+            maxLines="3" : affiche max 3 lignes de texte
+            ellipsize="end" : ajoute "..." si le texte est trop long
+        -->
+        <TextView
+            android:id="@+id/tvContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#616161"
+            android:textSize="14sp"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:lineSpacingExtra="2dp"
+            android:layout_marginBottom="12dp"
+            android:text="Contenu de l'annonce..." />
+
+        <!-- ── Séparateur ── -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#F0F0F0"
+            android:layout_marginBottom="10dp" />
+
+        <!-- ── LIGNE 4 : Auteur + Date ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvAuthor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#9E9E9E"
+                android:textSize="12sp"
+                android:text="Par Admin" />
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#9E9E9E"
+                android:textSize="12sp"
+                android:text="il y a 2h" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Ligne 1 : icône groupe + nom -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:text="👥"
+                android:textSize="22sp"
+                android:gravity="center"
+                android:background="#E3F2FD"
+                android:layout_marginEnd="12dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvGroupName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="#212121" />
+
+                <TextView
+                    android:id="@+id/tvGroupCreator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#9E9E9E"
+                    android:layout_marginTop="2dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Ligne 2 : filière + membres -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:id="@+id/tvGroupFiliere"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="13sp"
+                android:textColor="#1565C0" />
+
+            <TextView
+                android:id="@+id/tvMemberCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="#757575" />
+
+        </LinearLayout>
+
+        <!-- Description si présente -->
+        <TextView
+            android:id="@+id/tvGroupDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="#616161"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone" />
+
+        <!-- Bouton Rejoindre / Déjà membre -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnJoinGroup"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:text="Rejoindre"
+            android:textSize="14sp"
+            app:cornerRadius="8dp" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
