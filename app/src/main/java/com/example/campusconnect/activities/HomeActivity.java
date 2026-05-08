@@ -30,6 +30,8 @@ public class HomeActivity extends AppCompatActivity {
 
             if (itemId == R.id.nav_home) {
                 selectedFragment = new HomeFragment();
+            } else if (itemId == R.id.nav_groups) {
+                selectedFragment = new GroupsFragment();
             } else if (itemId == R.id.nav_schedule) {
                 selectedFragment = new ScheduleFragment();
             } else if (itemId == R.id.nav_chat) {

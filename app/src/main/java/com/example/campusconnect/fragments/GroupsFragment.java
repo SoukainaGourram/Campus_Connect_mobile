@@ -59,8 +59,6 @@ public class GroupsFragment extends Fragment {
 
         recyclerGroups.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new GroupAdapter(groupList, myUid, new GroupAdapter.OnGroupClickListener() {
-
-            // Clic "Rejoindre" ou clic long "Quitter"
             @Override
             public void onJoinClick(Group group, boolean isAlreadyMember) {
                 if (isAlreadyMember) {
